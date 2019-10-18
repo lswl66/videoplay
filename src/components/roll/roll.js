@@ -12,18 +12,34 @@
 
 import React from 'react'
 import './roll.less'
+import {Link} from 'react-router-dom'
+
 class Roll extends React.Component{
   render(){
     let item_roll1 = this.props.list_roll1.map((item,index) =>{
+      if(index == 11){
         return (
-            <div key={index}>
+          <div key={index}>
+            <Link to="/film" className="tofilm"> 
+              <span className="item_text">{item['item_text']}</span>
+              <span className="item_count">{item['item_count']}</span>
+              <img src={item['img']}/>
+              <p className="video_title">{item['video_title']}</p>
+              <p className="video_abstract">{item['video_abstract']}</p>
+            </Link>
+          </div>
+        );
+      }else{
+        return (
+          <div key={index}>
             <span className="item_text">{item['item_text']}</span>
             <span className="item_count">{item['item_count']}</span>
             <img src={item['img']}/>
             <p className="video_title">{item['video_title']}</p>
             <p className="video_abstract">{item['video_abstract']}</p>
-            </div>
+          </div>
         );
+      }
     }); 
     return(
         <div>

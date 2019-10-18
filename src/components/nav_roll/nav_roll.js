@@ -11,6 +11,7 @@
  **************************************************************************************/
 import React from 'react'
 import './nav_roll.less'
+import {Link} from 'react-router-dom'
 class Navroll extends React.Component{
     clickItem(a){
       this.setState({
@@ -25,20 +26,32 @@ class Navroll extends React.Component{
       }
     }
     render(){
+      console.log(this.props.list_roll);
         let item_roll = this.props.list_roll.map((item,index) =>{
+          if (index == 2){
+            return (
+              <Link key={index} className="linktovip" to="/vip">
+                <div onClick={this.clickItem.bind(this,index)} className={this.state.curSelectedIndex == index ? 'selected':''}>
+                  <span className="nav_title">{item['nav_title']}</span>
+                  <i className="nav_title_line"></i>
+                </div>
+              </Link>
+            );
+          }else{
             return (
               <div key={index} onClick={this.clickItem.bind(this,index)} className={this.state.curSelectedIndex == index ? 'selected':''}>
                 <span className="nav_title">{item['nav_title']}</span>
                 <i className="nav_title_line"></i>
               </div>
             );
+          }
         });
         return (
           <div>
             <div className="header_logo"></div>
-            <a className="header_search">
-                <span>哪吒之魔童降世</span>
-              </a>
+            <Link to='/search' className="header_search">
+              <span>哪吒之魔童降世</span>
+            </Link>
             <div className="nav_roll">{item_roll}</div>
           </div>
         )

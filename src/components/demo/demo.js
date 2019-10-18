@@ -19,7 +19,7 @@ import Navroll from '@components/nav_roll/nav_roll'
 import Roll from '@components/roll/roll'
 import Aimg from '@components/aimg/aimg'
 import Aimg1 from '@components/aimg1/aimg1'
-
+import ImageSwiper from '@components/image-swiper/image-swiper'
 class Demo extends React.Component {
   /**
    * @desc 不用解释了吧，这是组件的构造函数
@@ -47,6 +47,53 @@ class Demo extends React.Component {
   
   render() {
     let arr = [
+      {
+        list:[
+          {
+            item_text:"VIP",
+            item_count:"更新至82集",
+            img:"http://puui.qpic.cn/tv/0/325107250_1080607/0",
+            video_title:"【万界仙踪】万邪不侵，大道归一！",
+            video_abstract:""
+          },
+          {
+            item_text:"VIP",
+            item_count:"更新至23集",
+            img:"http://puui.qpic.cn/tv/0/323321458_1080607/0",
+            video_title:"【西行纪】师徒反目？沙僧暗杀三藏",
+            video_abstract:""
+          },
+          {
+            item_text:"VIP",
+            item_count:"更新至21集",
+            img:"http://puui.qpic.cn/tv/0/317840993_1080607/0",
+            video_title:"【绝命响应】 神秘AI女弓箭手来袭",
+            video_abstract:""
+          },
+          {
+            item_text:"VIP",
+            item_count:"更新至12集",
+            img:"http://puui.qpic.cn/tv/0/324038088_1080607/0",
+            video_title:"【彩虹的重力·首播】高以翔宣璐超甜治愈暖恋",
+            video_abstract:""
+          },
+          {
+            item_text:"VIP",
+            item_count:"更新至12集",
+            img:"http://puui.qpic.cn/tv/0/325108985_1080607/0",
+            video_title:"【明月照我心·更新】明月醉酒强吻王爷，终于亲了",
+            video_abstract:""
+          },
+          {
+            item_text:"独播",
+            item_count:"更新至12集",
+            img:"http://puui.qpic.cn/tv/0/324979316_1080607/0",
+            video_title:"【没有秘密的你·20点独播】戚薇金瀚超甜姐弟恋",
+            video_abstract:""
+          }
+        ],
+        type:0
+      },
       {
         title:'猜你会追',
         list:[
@@ -128,11 +175,11 @@ class Demo extends React.Component {
             video_abstract:"肥宅变帅哥的双面人生"
           },
           {
-            item_text:"VIP",
-            item_count:"全66集",
-            img:"http://puui.qpic.cn/vcover_hz_pic/0/639agzdh10yu2q21529249761/0",
-            video_title:"扶摇",
-            video_abstract:"杨幂阮经天热血逆战守河山"
+            item_text:"",
+            item_count:"全36集",
+            img:"http://puui.qpic.cn/vcover_hz_pic/0/1341d0wlua84rdo1508476248/0",
+            video_title:"红楼梦",
+            video_abstract:"87经典版宝黛钗"
           },
           {
             item_text:"VIP",
@@ -563,13 +610,19 @@ class Demo extends React.Component {
             <Aimg list_item={item['list']}></Aimg>
           </div>
         );
-      }else{
+      }else if (item['type'] == 3){
         return(
           <div key={index}>
             <div className="title2">{item['title']}</div>
             <Aimg1 list_item1={item['list']}></Aimg1>
           </div>
         );
+      }else{
+        return(
+          <div key={index}>
+            <ImageSwiper listImage={item['title','list']}></ImageSwiper>
+          </div>
+        )
       }
     });
     return (

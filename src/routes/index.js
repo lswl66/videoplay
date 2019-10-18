@@ -14,13 +14,20 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import App from '@pages/app/app'
 import RoutePage from '@pages/route-page/route-page'
-
+import Search from '@components/search/search'
+import Demo from '@components/demo/demo'
+import Vip from '@components/vip/vip'
+import Film from '@components/film/film'
 class Routes extends React.Component {
   render() {
     return (
       <Router>
         <Route path="/" exact component={ App }></Route>
         <Route path="/route-page" component={ RoutePage }></Route>
+        <Route path="/search" component={ Search }></Route>
+        <Route path="/demo" component={ Demo }></Route>
+        <Route path="/vip" component={ Vip }></Route>
+        <Route path="/film" component={ Film }></Route>
       </Router>
     )
   }
