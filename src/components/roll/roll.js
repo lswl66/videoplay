@@ -17,15 +17,15 @@ import {Link} from 'react-router-dom'
 class Roll extends React.Component{
   render(){
     let item_roll1 = this.props.list_roll1.map((item,index) =>{
-      if(index == 11){
+      if(index == 0){
         return (
           <div key={index}>
             <Link to="/film" className="tofilm"> 
               <span className="item_text">{item['item_text']}</span>
               <span className="item_count">{item['item_count']}</span>
               <img src={item['img']}/>
-              <p className="video_title">{item['video_title']}</p>
-              <p className="video_abstract">{item['video_abstract']}</p>
+              <p className="video_title">{item['name']}</p>
+              <p className="video_abstract">{item['summary']}</p>
             </Link>
           </div>
         );
@@ -35,8 +35,8 @@ class Roll extends React.Component{
             <span className="item_text">{item['item_text']}</span>
             <span className="item_count">{item['item_count']}</span>
             <img src={item['img']}/>
-            <p className="video_title">{item['video_title']}</p>
-            <p className="video_abstract">{item['video_abstract']}</p>
+            <p className="video_title">{item['name']}</p>
+            <p className="video_abstract">{item['summary']}</p>
           </div>
         );
       }

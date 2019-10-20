@@ -10,6 +10,6 @@
  * Function List       :
  **************************************************************************************/
 
-const apiBaseUrl = 'https://blog.shuipingguo.com'
+const apiBaseUrl = 'https://www.shuipingguo.com/2h4g/getvideo/'
 
 export { apiBaseUrl }

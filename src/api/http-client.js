@@ -14,7 +14,8 @@ import axios from 'axios'
 import { apiBaseUrl } from './http-config'
 
 const urlMap = {
-  getList: apiBaseUrl + '/list1/?tag=__all__&ac=wap&count=20&format=json_raw&as=A1E50A442CBAAEF&cp=5A4C8A0A5EEFDE1&min_behot_time=0'
+  getList: apiBaseUrl + '',
+  getVip: apiBaseUrl + 'list_vip'
 }
 
 const HttpClient = {
@@ -24,7 +25,14 @@ const HttpClient = {
         .then(function (response) { options.callback && options.callback(response); })
         .catch(function (error) { options.failcallback && options.failcallback(error); })
         .then(function () { }) 
-  }
+  },
+  getVip: (options) => {
+    axios
+      .get(urlMap.getVip, {params: options.params})
+        .then(function (response) { options.callback && options.callback(response); })
+        .catch(function (error) { options.failcallback && options.failcallback(error); })
+        .then(function () { }) 
+  },
 }
 
 export default HttpClient

@@ -21,8 +21,8 @@ class Aimg extends React.Component{
                 <span className="item_text">{item['item_text']}</span>
                 <span className="item_count">{item['item_count']}</span>
                 <img src={item['img']}/>
-                <p className="video_title">{item['video_title']}</p>
-                <p className="video_abstract">{item['video_abstract']}</p>
+                <p className="video_title">{item['name']}</p>
+                <p className="video_abstract">{item['summary']}</p>
               </div>
             );
           });

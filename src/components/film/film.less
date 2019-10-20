@@ -1,0 +1,161 @@
+.film_head{
+    display: inline-block;
+    width: 375px;
+    height: 55px;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: #2d2d2e;
+    .film_backHome{
+        display: inline-block;
+        margin: 16px 0 0 15px;
+        .film_backHome_logo{
+            display: block;
+            width: 114px;
+            height: 24px;
+            background: url(https://vm.gtimg.cn/tencentvideo/vstyle/mobile/v3/style/img/logo_white.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+    }
+    .film_toSearch{
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        .film_toSearch_icon{
+            position: absolute;
+            top: 20px;
+            right: 160px;
+        }
+    }
+    .film_toLogin{
+        text-decoration: none;
+        color: #fff;
+        position: absolute;
+        top: 20px;
+        right: 111px;
+        font-size: 13px;
+    }
+    .film_toDownload{
+        text-decoration: none;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        span{
+            display: inline-block;
+            padding: 0 8px;
+            margin: 13px 15px 0 0;
+            height: 28px;
+            line-height: 28px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+        }
+        i{
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            z-index: 10900;
+            position: absolute;
+            top: 38px;
+            right: 54px;
+            background-color: #2d2d2e;
+            border: 1px solid #fff;
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg);
+        }
+    }
+}
+.film_main{
+    margin-top: 55px;
+    margin-bottom: 40px;
+    .film_play{
+        width: 100%;
+        height: 211px;
+        video{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .film_swiper{
+        margin-bottom: 26px;
+    }
+    .film_data{
+        .film_data_left{
+            display: inline-block;
+            position: relative;
+            left: 14px;
+            span{
+                display: block;
+            }
+            .film_data_left_name{
+                font-size: 18px;
+                font-weight: 700;
+                margin: 4px 0 5px;
+            }
+            .film_data_left_label{
+                font-size: 13px;
+                color: #848494;
+            }
+        }
+    }
+    .film_slide{
+        margin-top: 40px;
+        position: relative;
+        .film_slide_head{
+            margin: 0 14px;
+            .film_slide_head_left{
+                font-size: 15px;
+                font-weight: 700;
+            }
+            .film_slide_head_right{
+                position: absolute;
+                right: 14px;
+                top: 2px;
+                font-size: 12px;
+                color: #848494;
+            }
+        }
+        .film_slide_inner{
+            white-space: nowrap;
+            overflow-x: auto;
+            // position: relative;
+            // left: 10px;
+            // top: 15px;
+            margin: 15px 0 0 10px;
+            span{
+                display: inline-block;
+                width: 56px;
+                height: 56px;
+                line-height: 56px;
+                text-align: center;
+                font-size: 14px;
+                margin: 0 4px;
+                background-color: #f6f8f6;
+            }
+            .selected{
+                color: #ff8400;
+            }
+        }
+    }
+}
+.film_about{
+    padding: 0 14px;
+    position: relative;
+    top: -15px;
+    .title{
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 29px;
+        color: #000028;
+        margin-bottom: 15px;
+    }
+    .film_about_item{
+        margin-bottom: 60px;
+    }
+}
+

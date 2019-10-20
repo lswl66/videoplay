@@ -10,9 +10,9 @@
  * Function List       :
  **************************************************************************************/
 import React from 'react'
-import './nav_roll.less'
+import './searchtitle.less'
 import {Link} from 'react-router-dom'
-class Navroll extends React.Component{
+class SearchTitle extends React.Component{
     clickItem(a){
       this.setState({
         curSelectedIndex: a
@@ -26,36 +26,33 @@ class Navroll extends React.Component{
       }
     }
     render(){
-      // console.log(this.props.list_roll);
-        let item_roll = this.props.list_roll.map((item,index) =>{
-          if (index == 2){
+        let item_roll = this.props.list_searchtitle.map((item,index) =>{
             return (
-              <Link key={index} className="linktovip" to="/vip">
-                <div onClick={this.clickItem.bind(this,index)} className={this.state.curSelectedIndex == index ? 'selected':''}>
+                <div key={index} onClick={this.clickItem.bind(this,index)} className={this.state.curSelectedIndex == index ? 'selected':''}>
                   <span className="nav_title">{item['nav_title']}</span>
                   <i className="nav_title_line"></i>
                 </div>
-              </Link>
             );
-          }else{
-            return (
-              <div key={index} onClick={this.clickItem.bind(this,index)} className={this.state.curSelectedIndex == index ? 'selected':''}>
-                <span className="nav_title">{item['nav_title']}</span>
-                <i className="nav_title_line"></i>
-              </div>
-            );
-          }
         });
         return (
-          <div>
-            <div className="header_logo"></div>
-            <Link to='/search' className="header_search">
-              <span>哪吒之魔童降世</span>
-            </Link>
-            <div className="nav_roll">{item_roll}</div>
+          <div className='search_bar'>
+            <div className="search_menu">
+                <div className="search_icon"></div>
+                <div className="search_box">
+                  <div className="search_box_inner">
+                    <input placeholder="输入片名、主演或导演"></input>
+                  </div>
+                </div>
+                <Link to="/demo" className="backHome">返回</Link>
+            </div>
+            <div className="search_title">{item_roll}</div>
+            <span className="search_box_icon">
+                <i className="search_box_icon_left"></i>
+                <i className="search_box_icon_right"></i>
+            </span>
           </div>
         )
     }
 }
-export default Navroll
+export default SearchTitle
 
