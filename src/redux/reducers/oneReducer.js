@@ -10,8 +10,8 @@
  * Function List       :
  **************************************************************************************/
 
-import { ADD_ONE } from '../actionTypes'
-
+import { ADD_ONE, CHANGE_HOME } from '../actionTypes'
+// import { CHANGE_HOME } from '../actionTypes'
 
 const initState = {}
 
@@ -22,6 +22,11 @@ export default function(state = initState, action) {
     case ADD_ONE: {
       return {
         id: action.payload.id
+      }
+    }
+    case CHANGE_HOME: {
+      return {
+        id: action.things.menu_type
       }
     }
     default:

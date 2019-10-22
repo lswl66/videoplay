@@ -27,15 +27,16 @@ class ImageSwiper extends React.Component{
         // console.log(mySwiper);
     }
     render(){
+        console.log(this.props.listImage)
         let imageList = this.props.listImage.map((item,index) =>{
             return(
                 <div key={index} className="swiper-slide">
-                    <span className="item_text">{item['item_text']}</span>
+                    {/* <span className="item_text">{item['item_text']}</span> */}
                     <span className="item_count">{item['item_count']}</span>
                     <img className="demo_swiper_img" src={item['img']}/>
-                    <p className="video_title">{item['summary']}</p>
-                    <p className="video_abstract">{item['video_abstract']}</p>
-                    <span className="list_count">{index+1}/6</span>
+                    <p className="video_title">{item['summary']||' '}</p>
+                    {/* <p className="video_abstract">{item['video_abstract']}</p> */}
+                    <span className="list_count">{index+1}/{this.props.listImage.length}</span>
                 </div>
             );
         });
